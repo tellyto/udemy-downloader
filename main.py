@@ -897,8 +897,7 @@ def handle_segments(url, format_id, video_title,
     print("> Downloading Lecture Tracks...")
     ret_code = subprocess.Popen([
         "yt-dlp", "--force-generic-extractor", "--allow-unplayable-formats",
-        "--concurrent-fragments", f"{concurrent_connections}", "--downloader",
-        "aria2c", "--fixup", "never", "-k", "-o", f"{file_name}.encrypted.%(ext)s",
+        "--concurrent-fragments", f"{concurrent_connections}", "--fixup", "never", "-k", "-o", f"{file_name}.encrypted.%(ext)s",
         "-f", format_id, f"{url}"
     ]).wait()
     print("> Lecture Tracks Downloaded")
@@ -1100,8 +1099,7 @@ def process_lecture(lecture, lecture_path, lecture_file_name, quality, access_to
                         ret_code = subprocess.Popen([
                             "yt-dlp", "--force-generic-extractor",
                             "--concurrent-fragments",
-                            f"{concurrent_connections}", "--downloader",
-                            "aria2c", "-o", f"{temp_filepath}", f"{url}"
+                            f"{concurrent_connections}", "-o", f"{temp_filepath}", f"{url}"
                         ]).wait()
                         if ret_code == 0:
                             # os.rename(temp_filepath, lecture_path)
