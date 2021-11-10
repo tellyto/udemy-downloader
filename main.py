@@ -1151,7 +1151,7 @@ def parse_new(_udemy, quality, skip_lectures, dl_assets, dl_captions,
     print(f"Chapter(s) ({total_chapters})")
     print(f"Lecture(s) ({total_lectures})")
 
-    course_name = _udemy.get("course_title")
+    course_name = _udemy.get("course_id")
     course_dir = os.path.join(download_dir, course_name)
     if not os.path.exists(course_dir):
         os.mkdir(course_dir)
