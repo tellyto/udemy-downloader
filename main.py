@@ -1333,7 +1333,7 @@ def parse_new(_udemy):
     logger.info(f"Lecture(s) ({total_lectures})")
 
     course_name = _udemy.get("course_id")
-    course_dir = os.path.join(DOWNLOAD_DIR, course_name)
+    course_dir = os.path.join(DOWNLOAD_DIR, str(course_name))
     if not os.path.exists(course_dir):
         os.mkdir(course_dir)
 
